@@ -20,4 +20,12 @@ function GetDatabaseConnection() {
  		echo "Connection Failed: " . $e->getMessage();
 	}
 }
+
+function taskData() {
+	$connec = GetDatabaseConnection();
+	$query = $connec->prepare("SELECT * FROM taak");
+
+	$query->execute();
+	$taken = $query->fetchall();
+}
 ?>
