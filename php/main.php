@@ -13,7 +13,15 @@
  
   include('../includes/connection.php');
   GetDatabaseConnection();
+  taskData();
+?>
 
+<div class="container">
+
+  <h1 class="mt-5"> Hoofdscherm </h2>
+
+<?php 
+  include('../includes/header.php');
 ?>
 
 </body>
