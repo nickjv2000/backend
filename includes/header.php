@@ -7,5 +7,3 @@
  <a class="btn-lg btn btn-dark text-white align-self-center mt-3" href="createTask.php?">Nieuwe taak </a>
 
  <a class="btn-lg btn btn-dark text-white align-self-center mt-3" href="updateTask.php">Update taak </a>
-
- <a class="btn-lg btn btn-dark text-white align-self-center mt-3" href="deleteTask.php">Delete taak </a>
