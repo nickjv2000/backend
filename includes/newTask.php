@@ -10,7 +10,7 @@
 	$deadline = $_POST["deadline"];
 
 	$pdo = new PDO($connecter, $username, $password);
-	$statement = $pdo->prepare("CREATE IN taak set taak = :taak, wie = :wie, deadline = :deadline");
+	$statement = $pdo->prepare("INSERT INTO taak = :taak, wie = :wie, deadline = :deadline");
 	
 	$statement->bindParam(":taak", $taak);
 	$statement->bindParam(":wie", $wie);
