@@ -29,7 +29,7 @@
         <p><h4>Naam</h4></p>
         <p><input type="text" name="wie" placeholder="Vul naam in" size="30" required></p>
         <p><h4>Deadline</h4></p>
-        <p><input type="Text" name="width" placeholder="Vul deadline in" required></p>
+        <p><input type="Text" name="deadline" placeholder="Vul deadline in" required></p>
 
         <p><a href="main.php"><input class="btn btn-dark" type="submit" value="Creëer"></a></p>
     </form>
