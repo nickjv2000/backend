@@ -27,7 +27,7 @@
         <p class="mt-2"><h4>Taak</h4></p>
         <p><input type="text" name="taak" placeholder="Vul taak in" required></p>
         <p><h4>Naam</h4></p>
-        <p><input type="text" name="wie" placeholder="Vul naam in" size="30" required></p>
+        <p><input type="text" name="naam" placeholder="Vul naam in" size="30" required></p>
         <p><h4>Deadline</h4></p>
         <p><input type="Text" name="deadline" placeholder="Vul deadline in" required></p>
 

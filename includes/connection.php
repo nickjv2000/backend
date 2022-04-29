@@ -23,15 +23,14 @@ function GetDatabaseConnection() {
 
 function taskData() {
 	$connec = GetDatabaseConnection();
-	$query = $connec->prepare("SELECT * FROM taak");
-
+	$query = $connec->prepare("SELECT * FROM tasks");
 	$query->execute();
 	$taken = $query->fetchall();
 }
 
 function deleteTask() {
 	$connec = GetDatabaseConnection();
-	$query = $connec->prepare("DELETE FROM taak WHERE taak = :taak");
+	$query = $connec->prepare("DELETE FROM tasks WHERE taak = :taak");
 	$query->bindParam(":taak", $taak);
 	$query->execute();
 }
