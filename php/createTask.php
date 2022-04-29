@@ -34,6 +34,5 @@
         <p><a href="main.php"><input class="btn btn-dark" type="submit" value="Creëer"></a></p>
     </form>
 </div>
-
 </body>
 </html>

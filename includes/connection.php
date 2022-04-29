@@ -1,14 +1,11 @@
 <?php 
-
 $connec = GetDatabaseConnection();
-
 
 function GetDatabaseConnection() {
 	$servername = "localhost";
 	$username = "root";
 	$password = "mysql";
 	$dbname = "backend";
-
 
 	try {
  		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

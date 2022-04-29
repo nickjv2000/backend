@@ -11,7 +11,6 @@
 
 	$pdo = new PDO($connector, $username, $password);
 	$statement = $pdo->prepare("UPDATE taak SET taak = :taak, wie = :wie, deadline = :deadline");
-
 	$statement->bindParam(":taak", $taak);
 	$statement->bindParam(":wie", $wie);
 	$statement->bindParam(":deadline", $deadline);
