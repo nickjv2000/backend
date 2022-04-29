@@ -6,14 +6,14 @@
 	$connecter = "mysql:host=" . $servername . ";dbname=" . $dbname . ";";
 
 	$taak = $_POST["taak"];
-	$wie = $_POST["wie"];
+	$naam = $_POST["naam"];
 	$deadline = $_POST["deadline"];
 
 	$pdo = new PDO($connecter, $username, $password);
-	$statement = $pdo->prepare("CREATE IN taak SET taak = :taak, wie = :wie, deadline = :deadline");
-	
+	$statement = $pdo->prepare("INSERT INTO tasks (taak, naam, deadline)
+		VALUES (:taak, :naam, :deadline)");
 	$statement->bindParam(":taak", $taak);
-	$statement->bindParam(":wie", $wie);
+	$statement->bindParam(":naam", $naam);
 	$statement->bindParam(":deadline", $deadline);
 	$statement->execute();
 ?>
