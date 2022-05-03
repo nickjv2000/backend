@@ -1,20 +1,12 @@
-<?php 
+<?php
 	$servername = "localhost";
 	$username = "root";
 	$password = "mysql";
 	$dbname = "backend";
 	$connecter = "mysql:host=" . $servername . ";dbname=" . $dbname . ";";
 
-	$taak = $_POST["taak"];
-	$naam = $_POST["naam"];
-	$deadline = $_POST["deadline"];
-
 	$pdo = new PDO($connecter, $username, $password);
-	$statement = $pdo->prepare("INSERT INTO tasks (taak, naam, deadline)
-		VALUES (:taak, :naam, :deadline)");
-	$statement->bindParam(":taak", $taak);
-	$statement->bindParam(":naam", $naam);
-	$statement->bindParam(":deadline", $deadline);
+	$statement = $pdo->prepare("DELETE FROM tasks WHERE id = :id");
 	$statement->execute();
 ?>
 
@@ -24,7 +16,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<title>Taak aangemaakt</title>
+	<title>Taak Verwijderd</title>
 </head>
 <body>
 
@@ -33,7 +25,7 @@
   GetDatabaseConnection();
 ?>
 
-<h1 class="mt-5"><center> Taak aangemaakt</center></h1>
+<h1 class="mt-5"><center> Taak Verwijderd</center></h1>
 <div class="container">
 <center><a class="btn-lg btn btn-dark text-white align-self-center mt-3" href="../php/index.php?">Hoofdscherm</a></center>
 </body>

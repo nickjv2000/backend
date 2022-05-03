@@ -11,6 +11,11 @@
 <?php
   include('../includes/connection.php');
   GetDatabaseConnection();
+  $id = $_GET["id"];
+  $getid = GetTaskID($id);
+  $taak = $getid["taak"];
+  $naam = $getid["naam"];
+  $deadline = $getid["deadline"];
 ?>
 
 <div class="container">
@@ -22,16 +27,15 @@
 ?>
 
 <div class="align-self-center mt-5">
-    <h1>Bewerk hier <?php echo $gettaak['taak']; ?></h1>
     <form action="../includes/updateTask.php" method="post">
         <p class="mt-2"><h4>Taak</h4></p>
         <p><input type="text" name="taak" placeholder="Taak" required value="<?php echo $taak ?>"></p>
         <p><h4>Naam</h4></p>
-        <p><input type="text" name="naam" placeholder="Naam" required value="<?php echo $wie ?>"></p>
+        <p><input type="text" name="naam" placeholder="Naam" required value="<?php echo $naam ?>"></p>
         <p><h4>Deadline</h4></p>
         <p><input type="text" name="deadline" placeholder="Deadline" required value="<?php echo $deadline ?>"></p>
 
-        <p><input class="btn btn-dark" type="submit" value="Update"></p>
+        <p><input class="btn btn-dark" type="submit" onclick="return confirm('Bevestig update')" value="Update"></p>
     </form>
 </div>
 </body>

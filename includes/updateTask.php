@@ -2,17 +2,18 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "mysql";
-	$dbname = "camping";
+	$dbname = "backend";
 	$connecter = "mysql:host=" . $servername . ";dbname=" . $dbname . ";";
 
 	$taak = $_POST["taak"];
-	$wie = $_POST["wie"];
+	$naam = $_POST["naam"];
 	$deadline = $_POST["deadline"];
 
 	$pdo = new PDO($connector, $username, $password);
-	$statement = $pdo->prepare("UPDATE taak SET taak = :taak, wie = :wie, deadline = :deadline");
+	$statement = $pdo->prepare("UPDATE INTO tasks (taak, naam, deadline)
+		VALUES (:taak, :naam, :deadline)");
 	$statement->bindParam(":taak", $taak);
-	$statement->bindParam(":wie", $wie);
+	$statement->bindParam(":naam", $naam);
 	$statement->bindParam(":deadline", $deadline);
 	$statement->execute();
 

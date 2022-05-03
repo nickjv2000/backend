@@ -18,6 +18,14 @@ function GetDatabaseConnection() {
 	}
 }
 
+function GetTaskId($id){
+	$connec = GetDatabaseConnection();
+    $query = $connec->prepare("SELECT * FROM tasks WHERE taak_id = :id");
+    $query->bindParam(":id", $id);
+    $query->execute();
+    return $query->fetch();
+}
+
 function taskData() {
 	$connec = GetDatabaseConnection();
 	$query = $connec->prepare("SELECT * FROM tasks");
@@ -25,10 +33,10 @@ function taskData() {
 	$taken = $query->fetchall();
 }
 
-function deleteTask() {
+function deleteTaak($id){
 	$connec = GetDatabaseConnection();
-	$query = $connec->prepare("DELETE FROM tasks WHERE taak = :taak");
-	$query->bindParam(":taak", $taak);
+	$query = $connec->prepare("DELETE FROM tasks WHERE id = :id");
+	$query->bindParam(":id", $id);
 	$query->execute();
 }
 ?>

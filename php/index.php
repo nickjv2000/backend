@@ -10,7 +10,6 @@
 <body>
 
 <?php
- 
   include('../includes/connection.php');
   GetDatabaseConnection();
   taskData();
@@ -31,12 +30,12 @@
   <div class="mt-5 float-left mr-3 ">
     <div class="card">
         <div class="card-body">
-          <h1> Taak </h1>
+          <h1><u> Taak </u></h1>
           <h4> <?php echo $count["taak"]; ?> </h4>
           <h4> <?php echo $count["naam"]; ?> </h4>
           <h4> <?php echo $count["deadline"]; ?> </h4>
-          <a class="btn-lg btn btn-dark text-white align-self-center mt-3" href="updateTask.php">Update taak </a>
-          <a class="btn-lg btn btn-dark text-white align-self-center mt-3" href="deleteTask.php">Delete taak </a>
+          <a class="btn-lg btn btn-dark text-white align-self-center mt-3" href="updateTask.php?id=<?= $count["taak_id"] ?>">Update taak </a>
+          <a class="btn-lg btn btn-dark text-white align-self-center mt-3" href="deleteTask.php?id=<?= $count["taak_id"] ?>">Delete taak </a>
         </div>
     </div>
   </div>
