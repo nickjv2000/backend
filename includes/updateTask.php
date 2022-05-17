@@ -5,16 +5,20 @@
 	$dbname = "backend";
 	$connecter = "mysql:host=" . $servername . ";dbname=" . $dbname . ";";
 
+	$id = $_GET['taak_id'];
 	$taak = $_POST["taak"];
 	$naam = $_POST["naam"];
 	$deadline = $_POST["deadline"];
+	$tijd = $_POST["tijd"];
+	$status = $_POST["status"];
 
 	$pdo = new PDO($connector, $username, $password);
-	$statement = $pdo->prepare("UPDATE INTO tasks (taak, naam, deadline)
-		VALUES (:taak, :naam, :deadline)");
+	$statement = $pdo->prepare("UPDATE tasks SET taak = :taak, naam = :naam, deadline = :deadline, tijd = :tijd, status = :tijd WHERE 'tasks'.'taak_id' =".$id);
 	$statement->bindParam(":taak", $taak);
 	$statement->bindParam(":naam", $naam);
 	$statement->bindParam(":deadline", $deadline);
+	$statement->bindParam(":tijd", $tijd);
+	$statement->bindParam(":status", $status);
 	$statement->execute();
 
 ?>
