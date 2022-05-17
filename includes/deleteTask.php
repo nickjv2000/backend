@@ -5,8 +5,10 @@
 	$dbname = "backend";
 	$connecter = "mysql:host=" . $servername . ";dbname=" . $dbname . ";";
 
+	$id = $_GET['taak_id'];
+
 	$pdo = new PDO($connecter, $username, $password);
-	$statement = $pdo->prepare("DELETE FROM tasks WHERE id = :id");
+	$statement = $pdo->prepare("DELETE FROM tasks WHERE taak_id =".$id);
 	$statement->execute();
 ?>
 
@@ -27,6 +29,6 @@
 
 <h1 class="mt-5"><center> Taak Verwijderd</center></h1>
 <div class="container">
-<center><a class="btn-lg btn btn-dark text-white align-self-center mt-3" href="../php/index.php?">Hoofdscherm</a></center>
+<center><a class="btn-lg btn btn-dark text-white align-self-center mt-3" href="../php/index.php?">Hoofdscherm <?php echo $id?></a></center>
 </body>
 </html>
