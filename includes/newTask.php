@@ -8,13 +8,17 @@
 	$taak = $_POST["taak"];
 	$naam = $_POST["naam"];
 	$deadline = $_POST["deadline"];
+	$tijd = $_POST["tijd"];
+	$status = $_POST["status"];
 
 	$pdo = new PDO($connecter, $username, $password);
-	$statement = $pdo->prepare("INSERT INTO tasks (taak, naam, deadline)
-		VALUES (:taak, :naam, :deadline)");
+	$statement = $pdo->prepare("INSERT INTO tasks (taak, naam, deadline, tijd, status)
+		VALUES (:taak, :naam, :deadline, :tijd, :status)");
 	$statement->bindParam(":taak", $taak);
 	$statement->bindParam(":naam", $naam);
 	$statement->bindParam(":deadline", $deadline);
+	$statement->bindParam(":tijd", $tijd);
+	$statement->bindParam(":status", $status);
 	$statement->execute();
 ?>
 
