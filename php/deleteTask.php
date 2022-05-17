@@ -17,6 +17,8 @@
   $taak = $getid["taak"];
   $naam = $getid["naam"];
   $deadline = $getid["deadline"];
+  $tijd = $getid["tijd"];
+  $status = $getid["status"];
 ?>
 
 <div class="container">
@@ -28,14 +30,20 @@
 ?>
 
 <div class="align-self-center mt-5">
-    <h1>Bewerk hier <?php echo $getid['taak']; ?></h1>
+    <h1>Verwijder hier <?php echo $getid['taak']; ?> voor <?php echo $getid['naam'] ?></h1>
     <form action="../includes/deleteTask.php" method="post">
-        <p><h4>Naam = <?php echo $taak ?></h4></p>
+        <p><h4>Id = <?php echo $id ?></h4></p>
+        <p><input type="text" hidden name="taak_id" placeholder="ID" required value="<?php echo $id ?> readonly"></p>
+        <p><h4>Taak = <?php echo $taak ?></h4></p>
         <p><input type="text" hidden name="taak" placeholder="Taak" required value="<?php echo $taak ?>"></p>
         <p><h4>Naam = <?php echo $naam ?></h4></p>
         <p><input type="text" hidden name="naam" placeholder="Naam" required value="<?php echo $naam ?>"></p>
         <p><h4>Deadline = <?php echo $deadline ?></h4></p>
         <p><input type="text" hidden name="deadline" placeholder="Deadline" required value="<?php echo $deadline ?>"></p>
+        <p><h4>Tijd = <?php echo $tijd ?></h4></p>
+        <p><input type="text" hidden name="tijd" placeholder="tijd" required value="<?php echo $tijd ?>"></p>
+        <p><h4>Status = <?php echo $status ?></h4></p>
+        <p><input type="text" hidden name="status" placeholder="status" required value="<?php echo $status ?>"></p>
         <p><input class="btn btn-dark" type="submit" onclick="return confirm('Bevestig verwijderen')" value="Delete"></p>
     </form>
 </div>
