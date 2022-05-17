@@ -24,14 +24,17 @@
 <div class="align-self-center mt-5">
     <h1>Maak hier een nieuwe taak</h1>
     <form action="../includes/newTask.php" method="post">
-        <p class="mt-2"><h4>Taak</h4></p>
+        <p><h4>Taak</h4></p>
         <p><input type="text" name="taak" placeholder="Vul taak in" required></p>
-        <p><h4>Naam</h4></p>
+        <p><h4>Naam van persoon die de taak uitvoerd</h4></p>
         <p><input type="text" name="naam" placeholder="Vul naam in" size="30" required></p>
-        <p><h4>Deadline</h4></p>
+        <p><h4>Deadline van de taak</h4></p>
         <p><input type="Text" name="deadline" placeholder="Vul deadline in" required></p>
-
-        <p><a href="main.php"><input class="btn btn-dark" type="submit" value="Creëer"></a></p>
+        <p><h4>Tijd voor de taak</h4></p>
+        <p><input type="Text" name="tijd" placeholder="Vul tijd in" required></p>
+        <p><h4>Status van de taak</h4></p>
+        <p><input type="Text" name="status" value="Nieuw" required readonly></p>
+        <p><a href="main.php"><input class="btn btn-dark mt-3" type="submit" value="Creëer"></a></p>
     </form>
 </div>
 </body>
