@@ -11,14 +11,7 @@
 <?php
   include('../includes/connection.php');
   GetDatabaseConnection();
-
-  $id = $_GET["id"];
-  $getid = GetTaskID($id);
-  $taak = $getid["taak"];
-  $naam = $getid["naam"];
-  $deadline = $getid["deadline"];
-  $tijd = $getid["tijd"];
-  $status = $getid["status"];
+  grabInfo($id, $taak, $naam, $deadline, $tijd, $status);
 ?>
 
 <div class="container">
