@@ -12,12 +12,7 @@
   include('../includes/connection.php');
   GetDatabaseConnection();
   $id = $_GET["id"];
-  $getid = GetTaskID($id);
-  $taak = $getid["taak"];
-  $naam = $getid["naam_persoon"];
-  $deadline = $getid["deadline"];
-  $tijd = $getid["tijd"];
-  $status = $getid["status"];
+  grabInfo($taak, $naam, $deadline, $tijd, $status);
 ?>
 
 <div class="container">
@@ -30,8 +25,7 @@
 
 <div class="align-self-center mt-5">
     <form action="../includes/updateTask.php" method="post">
-        <p><h4> Id </h4></p>
-        <p><input type="text"  name="taak_id" placeholder="ID" readonly required value="<?php echo $id ?>"></p>
+        <p><input type="text"  name="id" placeholder="Id" hidden required value="<?php echo $id ?>"></p>
         <p class="mt-2"><h4> Taak </h4></p>
         <p><input type="text" name="taak" placeholder="Taak" required value="<?php echo $taak ?>"></p>
         <p><h4> Naam </h4></p>
@@ -40,10 +34,29 @@
         <p><input type="text" name="deadline" placeholder="Deadline" required value="<?php echo $deadline ?>"></p>
         <p><h4> Tijd </h4></p>
         <p><input type="text" name="tijd" placeholder="tijd" required value="<?php echo $tijd ?>"></p>
+        <p>
+            <select id="tijd" name="tijd" required valuue="<?php echo $tijd ?>">
+                <option value="1">1 uur</option>
+                <option value="2">2 uur</option>
+                <option value="1">3 uur</option>
+                <option value="2">4 uur</option>
+                <option value="1">5 uur</option>
+                <option value="2">6 uur</option>
+                <option value="1">7 uur</option>
+                <option value="2">8 uur</option>
+                <option value="1">9 uur</option>
+                <option value="2">10 uur</option>
+            </select>   
+        </p>
+
         <p><h4> Status </h4></p>
-        <p><input type="text" name="status" placeholder="Status" required value="<?php echo $status ?>">
-        <h5> Opties voor status: Nieuw / Bezig / Klaar
-      </h5></p>
+        <p>
+            <select id="status" name="status" value="<?php echo $status ?>">
+                <option value="Nieuw">Nieuw</option>
+                <option value="Bezig">Bezig</option>
+                <option value="Klaar">Klaar</option>
+            </select>    
+        </p>
         <!-- <p><h4><label for="status">Choose a value:</label></h4></p>
             <select name="status" id="status" readonly>
                 <option value="new">Nieuw</option>
