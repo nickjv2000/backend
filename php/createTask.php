@@ -11,6 +11,7 @@
 <?php 
 	include('../includes/connection.php');
 	GetDatabaseConnection();
+    $id = $_GET["id"];
 ?>
 
 <div class="container">
@@ -30,10 +31,29 @@
         <p><input type="text" name="naam" placeholder="Vul naam in" size="30" required></p>
         <p><h4>Deadline van de taak</h4></p>
         <p><input type="Text" name="deadline" placeholder="Vul deadline in" required></p>
-        <p><h4>Tijd voor de taak</h4></p>
-        <p><input type="Text" name="tijd" placeholder="Vul tijd in" required></p>
+        <p><h4>Tijd in uren voor de taak</h4></p>
+        <p>
+            <select id="tijd" name="tijd" readonly>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="1">3</option>
+                <option value="2">4</option>
+                <option value="1">5</option>
+                <option value="2">6</option>
+                <option value="1">7</option>
+                <option value="2">8</option>
+                <option value="1">9</option>
+                <option value="2">10</option>
+            </select>   
+        </p>
         <p><h4>Status van de taak</h4></p>
-        <p><input type="Text" name="status" value="Nieuw" required readonly></p>
+        <p>
+            <select id="status" name="status" readonly>
+                <option value="Nieuw">Nieuw</option>
+                <option value="Bezig">Bezig</option>
+            </select>    
+        </p>
+        <p><input type="Text" name="lijsten_id" value="<?php echo $id ?>" required hidden></p>
         <p><a href="main.php"><input class="btn btn-dark mt-3" type="submit" value="Creëer"></a></p>
     </form>
 </div>
