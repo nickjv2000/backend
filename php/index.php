@@ -61,6 +61,7 @@
       <!-- maak een aparte functie ervan om het meerdemalen aan te roepen --> 
       <a class="btn-lg btn btn-dark text-white align-self-center mb-3" href="createTask.php?id=<?= $counting["lijst_id"] ?>">Nieuwe taak </a>
       <a class="btn-lg btn btn-dark text-white align-self-center mb-3" href="deleteList.php?id=<?= $counting["lijst_id"] ?>">Delete lijst </a>
+      <a class="btn-lg btn btn-dark text-white align-self-center mb-3" href="updateList.php?id=<?= $counting["lijst_id"] ?>">Update lijst </a>
       <br>
       <?php 
         $query = $connec->prepare("SELECT * FROM tasks where lijsten_id = ".$counting["lijst_id"]);
