@@ -11,7 +11,13 @@
 <?php
   include('../includes/connection.php');
   GetDatabaseConnection();
-  grabInfo($id, $taak, $naam, $deadline, $tijd, $status);
+  $id = $_GET["id"];
+  $getid = GetTaskID($id);
+  $taak = $getid["taak"];
+  $naam = $getid["naam"];
+  $deadline = $getid["deadline"];
+  $tijd = $getid["tijd"];
+  $status = $getid["status"];
 ?>
 
 <div class="container">
@@ -26,7 +32,7 @@
     <h1>Verwijder hier <?php echo $getid['taak']; ?> voor <?php echo $getid['naam'] ?></h1>
     <form action="../includes/deleteTask.php" method="post">
         <p><h4>Id = <?php echo $id ?></h4></p>
-        <p><input type="text" hidden name="taak_id" placeholder="ID" required value="<?php echo $id ?> readonly"></p>
+        <p><input type="text" hidden name="taak_id" placeholder="ID" required readonly value="<?php echo $id ?>"></p>
         <p><h4>Taak = <?php echo $taak ?></h4></p>
         <p><input type="text" hidden name="taak" placeholder="Taak" required value="<?php echo $taak ?>"></p>
         <p><h4>Naam = <?php echo $naam ?></h4></p>
