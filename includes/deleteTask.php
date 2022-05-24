@@ -1,10 +1,11 @@
 <?php
-	GetDatabaseConnection();
 	include('../includes/connection.php');
-	$id = $_GET['taak_id'];
-
-	$pdo = new PDO($connecter, $username, $password);
-	$statement = $pdo->prepare("DELETE FROM tasks WHERE taak_id =".$id);
-	$statement->execute();
+	GetDatabaseConnection();
+	$id = $_POST['taak_id'];
+	echo $id;
+	$query = $connec->prepare("DELETE FROM tasks WHERE taak_id = :id");
+	$query->bindParam(":id", $id);
+	$query->execute();
 	header("Location: http://localhost/back-end/backend/php/index.php");
+	die();
 ?>
