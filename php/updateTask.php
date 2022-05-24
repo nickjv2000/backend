@@ -62,13 +62,6 @@
                 <option value="Klaar">Klaar</option>
             </select>    
         </p>
-        <!-- <p><h4><label for="status">Choose a value:</label></h4></p>
-            <select name="status" id="status" readonly>
-                <option value="new">Nieuw</option>
-                <option value="bezig">Bezig</option>
-                <option value="klaar">Afgerond</option>
-            </select> -->
-
         <p><input class="btn btn-dark mt-3" type="submit" onclick="return confirm('Bevestig update')" value="Update"></p>
     </form>
 </div>
