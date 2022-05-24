@@ -24,31 +24,43 @@
 
 <div class="mt-5">
 <?php 
- $query = $connec->prepare("SELECT * FROM lijsten");
- $query->execute();
- $taking = $query->fetchall();
- foreach($taking as $counting){
+  $query = $connec->prepare("SELECT * FROM lijsten");
+  $query->execute();
+  $taking = $query->fetchall();
+  foreach($taking as $counting){
 ?>
 <div class="float-left mr-3">
   <div class="card">
     <div class="card-body">
       <h1> <?php echo $counting["naam_lijst"]; ?> </h1> 
 
+      <form name="Task properties" class="mt-3 mb-2" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        
+        <button type="submit" name="sort_task_tijd" class="button btn-lg btn btn-light" value="1"> Sorteer op tijd </button>
+
+        <button type="submit" name="sort_task_status" class="button btn-lg btn btn-light" value="1"> Sorteer op status </button>
+      
+      </form>
+
       <?php 
       if($_POST['sort_task_tijd'] == true) {
-        "SELECT * FROM tasks ORDER BY `tasks`.`tijd` ASC";
+        // pak de huidige lijst met de items erin
+        // items sorteren en de lijst opieuw laden in de applicatie
+
+
+        // de lijst opnieuw laden met die onderstaande query uit de database
+        "SELECT * FROM tasks ORDER BY tijd ASC";
       }
 
       if($_POST['sort_task_status'] == true) {
-        "SELECT * FROM tasks ORDER BY `tasks`.`status` ASC";
+        "SELECT * FROM tasks ORDER BY status ASC";
       }
       ?>
 
-      <form name="Task properties" class="mt-3 mb-2" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <button type="submit" name="sort_task_tijd" class="button btn-lg btn btn-light" value="1"> Sorteer op tijd </button>
-        <button type="submit" name="sort_task_status" class="button btn-lg btn btn-light" value="1"> Sorteer op status </button>
-      </form>
+
+      <!-- maak een aparte functie ervan om het meerdemalen aan te roepen --> 
       <a class="btn-lg btn btn-dark text-white align-self-center mb-3" href="createTask.php?id=<?= $counting["lijst_id"] ?>">Nieuwe taak </a>
+      <a class="btn-lg btn btn-dark text-white align-self-center mb-3" href="deleteList.php?id=<?= $counting["lijst_id"] ?>">Delete lijst </a>
       <br>
       <?php 
         $query = $connec->prepare("SELECT * FROM tasks where lijsten_id = ".$counting["lijst_id"]);
