@@ -85,6 +85,20 @@ function updateTask($id, $taak, $naam, $deadline, $tijd, $status){
 
 }
 
+/**
+ * Pak alle informatie die word meegegeven
+ * Update de naam van de lijst
+**/
+function updateList($id, $naam){
+	echo $id . " " . $naam;
+	
+	$connec = GetDatabaseConnection();
+	$query = $connec->prepare("UPDATE lijsten set naam_lijst = :naam_lijst WHERE lijst_id = :id");
+	$query->bindParam(":naam_lijst", $naam);
+	$query->bindParam(":id", $id);
+	$query->execute();
+}
+
 /** 
  * Pak alle infor die word ingevuld 
  * Maak een taak aan bij de ingevoerde lijst 
