@@ -9,10 +9,15 @@
 <body>
 
 <?php
-  include('../includes/connection.php');
-  GetDatabaseConnection();
-  $id = $_GET["id"];
-  grabInfo($taak, $naam, $deadline, $tijd, $status);
+    include('../includes/connection.php');
+    GetDatabaseConnection();
+    $id = $_GET["id"];
+    $getid = GetTaskID($id);
+    $taak = $getid["taak"];
+    $naam = $getid["naam"];
+    $deadline = $getid["deadline"];
+    $tijd = $getid["tijd"];
+    $status = $getid["status"];
 ?>
 
 <div class="container">
@@ -33,9 +38,9 @@
         <p><h4> Deadline </h4></p>
         <p><input type="text" name="deadline" placeholder="Deadline" required value="<?php echo $deadline ?>"></p>
         <p><h4> Tijd </h4></p>
-        <p><input type="text" name="tijd" placeholder="tijd" required value="<?php echo $tijd ?>"></p>
+        <p><input type="text" name="tijd" placeholder="tijd" readonly required value="<?php echo $tijd ?>"></p>
         <p>
-            <select id="tijd" name="tijd" required valuue="<?php echo $tijd ?>">
+            <select id="tijd" name="tijd" required value="<?php echo $tijd ?>">
                 <option value="1">1 uur</option>
                 <option value="2">2 uur</option>
                 <option value="1">3 uur</option>
