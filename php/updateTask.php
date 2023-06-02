@@ -38,20 +38,21 @@
         <p><h4> Deadline </h4></p>
         <p><input type="text" name="deadline" placeholder="Deadline" required value="<?php echo $deadline ?>"></p>
         <p><h4> Tijd </h4></p>
-        <p><input type="text" name="tijd" placeholder="tijd" readonly required value="<?php echo $tijd ?>"></p>
-        <p>
-            <select id="tijd" name="tijd" required value="<?php echo $tijd ?>">
-                <option value="1">1 uur</option>
-                <option value="2">2 uur</option>
-                <option value="1">3 uur</option>
-                <option value="2">4 uur</option>
-                <option value="1">5 uur</option>
-                <option value="2">6 uur</option>
-                <option value="1">7 uur</option>
-                <option value="2">8 uur</option>
-                <option value="1">9 uur</option>
-                <option value="2">10 uur</option>
-            </select>   
+        <p><input type="text" name="tijd" placeholder="Tijd" readonly required value="<?php echo $tijd ?> uur"></p>
+        <p><h4>Hoeveel uur naar aanpassen?</h4></p>
+        <p><input type="text" name="tijd" placeholder="Tijd" required>
+<!--             <p><select id="tijd" name="tijd" required value="<?php echo $tijd ?>">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="1">3</option>
+                <option value="2">4</option>
+                <option value="1">5</option>
+                <option value="2">6</option>
+                <option value="1">7</option>
+                <option value="2">8</option>
+                <option value="1">9</option>
+                <option value="2">10</option>
+            </select>    -->
         </p>
 
         <p><h4> Status </h4></p>

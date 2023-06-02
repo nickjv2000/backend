@@ -32,8 +32,8 @@
         <p><h4>Deadline van de taak</h4></p>
         <p><input type="Text" name="deadline" placeholder="Vul deadline in" required></p>
         <p><h4>Tijd in uren voor de taak</h4></p>
-        <p>
-            <select id="tijd" name="tijd" readonly>
+        <p><input type="text" name="tijd" placeholder="Vuul de tijd in" required></p>
+<!--             <select id="tijd" name="tijd">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="1">3</option>
@@ -44,7 +44,7 @@
                 <option value="2">8</option>
                 <option value="1">9</option>
                 <option value="2">10</option>
-            </select>   
+            </select>   --> 
         </p>
         <p><h4>Status van de taak</h4></p>
         <p>

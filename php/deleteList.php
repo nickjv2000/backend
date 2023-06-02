@@ -26,7 +26,7 @@
     <h1>Verwijder hier <?php echo $getid['naam_lijst'] ?></h1>
     	<form action="../includes/deleteList.php" method="post">
         	<p><h4>Id = <?php echo $id ?></h4></p>
-        	<p><input type="text" hidden name="taak_id" placeholder="ID" required value="<?php echo $id ?> readonly"></p>
+        	<p><input type="text" hidden name="lijst_id" placeholder="ID" required value="<?php echo $id ?>" readonly></p>
         	<p><h4>Naam = <?php echo $naam ?></h4></p>
         	<p><input type="text" hidden name="naam" placeholder="Naam" required value="<?php echo $naam ?>"></p>
         	<p><input class="btn btn-dark" type="submit" onclick="return confirm('Bevestig verwijderen, alle taken worden mee verwijderd')" value="Delete"></p>
