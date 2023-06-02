@@ -135,11 +135,11 @@ function deleteTaskList($id){
 
 /** Delete lijst en alle taken die de lijst_id hebben **/
 function deleteList($id){
+	/** deleteTaskList($id); **/
+
 	$connec = GetDatabaseConnection();
 	$query = $connec->prepare("DELETE FROM lijsten WHERE lijst_id = :id");
 	$query->bindParam(":id", $id);
 	$query->execute();
-
-	deleteTaskList($id);
 }
 ?>
