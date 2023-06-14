@@ -8,6 +8,6 @@
   	$tijd = $_POST["tijd"];
   	$status = $_POST["status"];
 	updateTask($id, $taak, $naam, $deadline, $tijd, $status);
-	header("Location: http://localhost/back-end/backend/php/index.php");
+	header("Location: http://localhost/backend/php/index.php");
 	die();
 ?>

@@ -9,6 +9,6 @@
 	$status = $_POST["status"];
 	$lijsten_id = $_POST["lijsten_id"];
 	newTask($id, $taak, $naam, $deadline, $tijd, $status, $lijsten_id);
-	header("Location: http://localhost/back-end/backend/php/index.php");
+	header("Location: http://localhost/backend/php/index.php");
 	die();
 ?>

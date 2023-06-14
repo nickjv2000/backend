@@ -5,6 +5,6 @@
   	$naam = $_POST["naam_lijst"];
 
 	updateList($id, $naam);
-	header("Location: http://localhost/back-end/backend/php/index.php");
+	header("Location: http://localhost/backend/php/index.php");
 	die();
 ?>

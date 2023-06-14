@@ -6,6 +6,6 @@
 	$query = $connec->prepare("DELETE FROM tasks WHERE taak_id = :id");
 	$query->bindParam(":id", $id);
 	$query->execute();
-	header("Location: http://localhost/back-end/backend/php/index.php");
+	header("Location: http://localhost/backend/php/index.php");
 	die();
 ?>

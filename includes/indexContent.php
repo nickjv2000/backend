@@ -1,7 +1,4 @@
         <?php 
-      	echo "tijd = " . $_POST['sort_task_tijd'] . "; ";
-      	echo "status = " . $_POST['sort_task_status'];
-
         if($_POST['sort_task_status'] == false && $_POST['sort_task_tijd'] == false) { 
           	$query = $connec->prepare("SELECT * FROM tasks where lijsten_id = ".$counting["lijst_id"]);
          	$query->execute();

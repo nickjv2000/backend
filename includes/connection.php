@@ -4,6 +4,9 @@
  * Geef een message als de connectie faalt
  * verbind de connectie aan $connec 
 **/
+
+error_reporting (E_ALL ^ E_NOTICE);
+
 function GetDatabaseConnection() {
 	$servername = "localhost";
 	$username = "root";
